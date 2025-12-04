@@ -177,7 +177,7 @@ ul {
    =================================== */
 
 .hero {
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    background: linear-gradient(135deg, rgba(139, 111, 71, 0.85) 0%, rgba(139, 111, 71, 0.9) 100%), url('../images/farm-photo.jpg') center/cover no-repeat;
     color: var(--color-white);
     text-align: center;
     padding: var(--spacing-xl) var(--spacing-md);
@@ -328,6 +328,18 @@ section {
 .content-image img {
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
+}
+
+.content-image .image-placeholder {
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 /* ===================================
