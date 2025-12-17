@@ -415,6 +415,16 @@ blockquote {
     margin-top: var(--spacing-lg);
 }
 
+.unique-section .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+    .unique-section .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Craftsmanship Preview Section */
 .craftsmanship-preview {
     background-color: var(--color-white);
@@ -494,8 +504,14 @@ blockquote {
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .value-card {
@@ -944,7 +960,12 @@ blockquote {
    =================================== */
 
 .ethos-section {
-    background-color: var(--color-background);
+    background-color: var(--color-white);
+}
+
+.ethos-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
 }
 
 .ethos-content {
