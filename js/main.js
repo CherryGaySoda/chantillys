@@ -63,21 +63,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // FAQ Accordion (optional enhancement)
+    // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
             const answer = this.nextElementSibling;
-            const isOpen = answer.style.maxHeight;
+            const isOpen = answer.classList.contains('active');
 
-            // Close all answers
+            // Close all answers and remove active class from questions
             document.querySelectorAll('.faq-answer').forEach(ans => {
                 ans.style.maxHeight = null;
+                ans.classList.remove('active');
+            });
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
             });
 
             // Toggle current answer
             if (!isOpen) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
+                answer.classList.add('active');
+                this.classList.add('active');
+                // Set max-height with buffer to account for padding
+                answer.style.maxHeight = (answer.scrollHeight + 50) + 'px';
+            }
+        });
+    });
+
+    // Product Benefits Accordion
+    const productBenefitsQuestions = document.querySelectorAll('.product-benefits-question');
+    productBenefitsQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const isOpen = answer.classList.contains('active');
+
+            // Close all answers and remove active class from questions
+            document.querySelectorAll('.product-benefits-answer').forEach(ans => {
+                ans.style.maxHeight = null;
+                ans.classList.remove('active');
+            });
+            document.querySelectorAll('.product-benefits-question').forEach(q => {
+                q.classList.remove('active');
+            });
+
+            // Toggle current answer
+            if (!isOpen) {
+                answer.classList.add('active');
+                this.classList.add('active');
+                // Set max-height with buffer to account for padding
+                answer.style.maxHeight = (answer.scrollHeight + 50) + 'px';
             }
         });
     });
